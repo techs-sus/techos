@@ -1,1 +1,5 @@
 local UI = require(script.createGUI)
+local Window = require(script.window)
+-- attempt to create a window (For Testing.)
+UI.part.CFrame = CFrame.new(0, 10, 0)
+Window.new(UI.main, "Test", UDim2.fromScale(0.5, 0.5), true)
