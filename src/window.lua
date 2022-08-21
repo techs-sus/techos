@@ -6,7 +6,7 @@ function window.new(parent: Frame, name: string?, size: UDim2?, resizeable: bool
 	local decorations = Instance.new("Frame")
 	local bar = Instance.new("TextBox")
 	bar.Text = name
-	bar.Size = UDim2.fromScale(1, 0)
+	bar.Size = UDim2.fromScale(1, 1)
 	bar.BorderSizePixel = 0
 	bar.BackgroundTransparency = 1
 	bar.TextScaled = true
