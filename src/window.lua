@@ -6,10 +6,12 @@ function window.new(parent: Frame, name: string?, size: UDim2?, resizeable: bool
 	local decorations = Instance.new("Frame")
 	local bar = Instance.new("TextBox")
 	bar.Text = name
-	bar.Size = UDim2.fromScale(0.5, 0)
-	bar.AutomaticSize = Enum.AutomaticSize.XY
+	bar.Size = UDim2.fromScale(1, 0)
 	bar.BorderSizePixel = 0
 	bar.BackgroundTransparency = 1
+	bar.TextScaled = true
+	bar.TextXAlignment = Enum.TextXAlignment.Center
+	bar.TextYAlignment = Enum.TextYAlignment.Center
 	bar.TextColor3 = Color3.new(1, 1, 1)
 	bar.Font = Enum.Font.Code
 	bar.Parent = decorations
