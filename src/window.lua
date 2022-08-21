@@ -20,14 +20,14 @@ function window.new(parent: Frame, name: string?, size: UDim2?, resizeable: bool
 	close.Image = "rbxassetid://7104731055"
 	close.BackgroundTransparency = 1
 	close.ImageColor3 = Color3.new(1, 0, 0)
-	close.AutomaticSize = Enum.AutomaticSize.XY
+	close.Size = UDim2.fromScale(0.5, 1)
 	close.Position = UDim2.fromScale(0.9, 0)
 	close.Parent = decorations
 	decorations.Size = UDim2.fromScale(1, 0.05)
 	decorations.Position = UDim2.fromScale(0, 0)
 	decorations.BorderSizePixel = 0
 	decorations.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
-	container.BackgroundColor3 = Color3.new(0.25, 0.25, 0.25)
+	container.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
 	container.BorderSizePixel = 0
 	container.Size = size or UDim2.fromScale(0.1, 0.1)
 	container.Position = UDim2.fromScale(0.5, 0.5)
