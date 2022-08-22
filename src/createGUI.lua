@@ -26,6 +26,7 @@ part.Transparency = 0.7
 part.Color = Color3.new(0.5, 0.7, 0.5)
 part.Anchored = true
 part.CanQuery = true -- for workspace:Raycast
+main.Parent = gui
 gui.Parent = script
 part.Parent = script
 
