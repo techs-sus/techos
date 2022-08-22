@@ -1,4 +1,5 @@
 local RunService = game:GetService("RunService")
+local TweenService = game:GetService("TweenService")
 local createPart = require(script.Parent.createPart)
 local part = createPart()
 local gui = Instance.new("SurfaceGui")
@@ -29,6 +30,14 @@ part.Anchored = true
 part.CanQuery = true -- for workspace:Raycast
 gui.Parent = script
 part.Parent = script
+
+local function scrollPosition()
+	TweenService:Create(scroll, TweenInfo.new(0.25), {
+		CanvasPosition = Vector2.new(0, ui.AbsoluteContentSize.Y - 125),
+	}):Play()
+end
+
+scroll.ChildAdded:Connect(scrollPosition)
 
 RunService.Stepped:Connect(function() end)
 
