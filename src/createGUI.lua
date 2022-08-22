@@ -1,4 +1,3 @@
-local RunService = game:GetService("RunService")
 local TweenService = game:GetService("TweenService")
 local createPart = require(script.Parent.createPart)
 local part = createPart()
@@ -12,7 +11,6 @@ ui.HorizontalAlignment = Enum.HorizontalAlignment.Left
 scroll.BackgroundTransparency = 1
 scroll.BorderSizePixel = 0
 scroll.AutomaticCanvasSize = Enum.AutomaticSize.XY
-scroll.CanvasSize = UDim2.fromScale(0, 0)
 ui.Parent = scroll
 scroll.Parent = main
 main.Size = UDim2.fromScale(1, 1)
@@ -38,8 +36,7 @@ local function scrollPosition()
 end
 
 scroll.ChildAdded:Connect(scrollPosition)
-
-RunService.Stepped:Connect(function() end)
+scroll.ChildRemoved:Connect(scrollPosition)
 
 return {
 	part = part,
