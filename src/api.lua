@@ -16,4 +16,5 @@ return function(container)
 		box.TextYAlignment = Enum.TextYAlignment.Top
 		box.Parent = container
 	end
+	return API
 end
