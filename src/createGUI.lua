@@ -11,8 +11,6 @@ ui.HorizontalAlignment = Enum.HorizontalAlignment.Left
 scroll.BackgroundTransparency = 1
 scroll.BorderSizePixel = 0
 scroll.AutomaticCanvasSize = Enum.AutomaticSize.XY
-ui.Parent = scroll
-scroll.Parent = main
 main.Size = UDim2.fromScale(1, 1)
 main.BackgroundColor3 = Color3.new(0.25, 0.25, 0.25)
 main.BorderSizePixel = 0
@@ -28,6 +26,8 @@ part.Anchored = true
 part.CanQuery = true -- for workspace:Raycast
 main.Parent = gui
 gui.Parent = script
+ui.Parent = scroll
+scroll.Parent = main
 part.Parent = script
 
 local function scrollPosition()
