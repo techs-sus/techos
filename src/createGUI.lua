@@ -11,6 +11,7 @@ ui.HorizontalAlignment = Enum.HorizontalAlignment.Left
 scroll.BackgroundTransparency = 1
 scroll.BorderSizePixel = 0
 scroll.Size = UDim2.fromScale(1, 1)
+scroll.CanvasSize = UDim2.fromScale(0, 0)
 scroll.AutomaticCanvasSize = Enum.AutomaticSize.XY
 main.Size = UDim2.fromScale(1, 1)
 main.BackgroundColor3 = Color3.new(0.25, 0.25, 0.25)
@@ -31,17 +32,9 @@ ui.Parent = scroll
 scroll.Parent = main
 part.Parent = script
 
-local function scrollPosition()
-	TweenService:Create(scroll, TweenInfo.new(0.25), {
-		CanvasPosition = Vector2.new(0, ui.AbsoluteContentSize.Y - 125),
-	}):Play()
-end
-
-scroll.ChildAdded:Connect(scrollPosition)
-scroll.ChildRemoved:Connect(scrollPosition)
-
 return {
 	part = part,
 	main = main,
 	scroll = scroll,
+	list = ui,
 }
