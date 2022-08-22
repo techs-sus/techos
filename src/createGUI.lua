@@ -1,7 +1,19 @@
+local RunService = game:GetService("RunService")
 local createPart = require(script.Parent.createPart)
 local part = createPart()
 local gui = Instance.new("SurfaceGui")
 local main = Instance.new("Frame")
+local scroll = Instance.new("ScrollingFrame")
+local ui = Instance.new("UIListLayout")
+ui.FillDirection = Enum.FillDirection.Vertical
+ui.VerticalAlignment = Enum.VerticalAlignment.Top
+ui.HorizontalAlignment = Enum.HorizontalAlignment.Left
+scroll.BackgroundTransparency = 1
+scroll.BorderSizePixel = 0
+scroll.AutomaticCanvasSize = Enum.AutomaticSize.XY
+scroll.CanvasSize = UDim2.fromScale(0, 0)
+ui.Parent = scroll
+scroll.Parent = main
 main.Size = UDim2.fromScale(1, 1)
 main.BackgroundColor3 = Color3.new(0.25, 0.25, 0.25)
 main.BorderSizePixel = 0
@@ -18,7 +30,10 @@ part.CanQuery = true -- for workspace:Raycast
 gui.Parent = script
 part.Parent = script
 
+RunService.Stepped:Connect(function() end)
+
 return {
 	part = part,
 	main = main,
+	scroll = scroll,
 }
