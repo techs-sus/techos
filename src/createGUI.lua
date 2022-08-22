@@ -10,6 +10,7 @@ ui.VerticalAlignment = Enum.VerticalAlignment.Top
 ui.HorizontalAlignment = Enum.HorizontalAlignment.Left
 scroll.BackgroundTransparency = 1
 scroll.BorderSizePixel = 0
+scroll.Size = UDim2.fromScale(1, 1)
 scroll.AutomaticCanvasSize = Enum.AutomaticSize.XY
 main.Size = UDim2.fromScale(1, 1)
 main.BackgroundColor3 = Color3.new(0.25, 0.25, 0.25)
