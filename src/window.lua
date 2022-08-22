@@ -51,4 +51,9 @@ function window:setPosition(position: UDim2)
 	return self
 end
 
+function window:setSize(size: UDim2)
+	self.container.Size = size
+	return self
+end
+
 return window
