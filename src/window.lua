@@ -43,7 +43,12 @@ end
 
 function window:setTitle(title: string)
 	self.__bar.Text = title
-	return window
+	return self
+end
+
+function window:setPosition(position: UDim2)
+	self.container.Position = position
+	return self
 end
 
 return window
