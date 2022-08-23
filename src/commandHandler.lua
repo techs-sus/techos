@@ -1,13 +1,10 @@
 --!strict
 
 local commands = {}
-local commandContext = require(script.Parent.CommandContext)
-export type Command = {
-	name: string,
-	aliases: Array<string>,
-	description: string,
-	exec: (Context) -> (),
-}
+local command = require(script.Parent.command)
+local commandContext = require(script.Parent.commandContext)
+type Command = command.Command
+
 local function validateCommand(command: Command)
 	if not command then
 		return false

@@ -1,8 +1,10 @@
+--!strict
+
 local Players = game:GetService("Players")
 local commandContext = {}
 commandContext.__index = commandContext
 
-type Context = typeof(commandContext) & {
+export type Context = typeof(commandContext) & {
 	player: Player,
 	arguments: Array<string>,
 }
