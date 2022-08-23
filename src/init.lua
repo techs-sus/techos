@@ -3,7 +3,7 @@ local API = require(script.api)(UI.scroll, UI.list)
 local commandManager = require(script.commandManager)
 commandManager.addDefaultCommands()
 UI.part.CFrame = CFrame.new(0, 10, -10)
-API.createText("<font color=rgb(50,50,50)>#### banner ####<font>")
+API.createText("<font color='rgb(50,50,50)'>#### banner ####<font>")
 API.createText(
 	string.format("hello %s, welcome to techos, commit %s", getfenv(1).owner.Name, getfenv(1).__COMPILEINFO.commit)
 )
