@@ -7,12 +7,14 @@ commandContext.__index = commandContext
 export type Context = typeof(commandContext) & {
 	player: Player,
 	arguments: Array<string>,
+	__create: (text: string) -> TextBox,
 }
 
-function commandContext.new(arguments: Array<string>, player: Player): Context
+function commandContext.new(arguments: Array<string>, player: Player, createText: (text: string) -> TextBox): Context
 	return setmetatable({
 		arguments = arguments,
 		player = player,
+		__create = createText,
 	}, commandContext)
 end
 
@@ -47,6 +49,18 @@ function commandContext:findPlayers(search: string): Array<Player>
 		end
 	end
 	return result
+end
+
+function commandContext:createText(text: string)
+	return self.__create(text)
+end
+
+function commandContext:get(n: number, throw: boolean?): string
+	throw = throw or true
+	if throw then
+		assert(self.arguments[n], "cmd context: failed getting arg " .. n)
+	end
+	return self.arguments[n]
 end
 
 return commandContext

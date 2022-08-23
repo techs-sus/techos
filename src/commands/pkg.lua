@@ -5,6 +5,6 @@ return {
 	aliases = {},
 	description = "Manages packages.",
 	exec = function(self: commandContext.Context)
-		print(self:findPlayer(self.arguments[1]))
+		print(self:findPlayer(self:get(1)))
 	end,
 }

@@ -1,8 +1,10 @@
-local commandContext = require(script.Parent.commandContext)
+local __h = require(script.Parent.commandContext)
+type Context = __h.Context
+
 export type Command = {
 	name: string,
 	aliases: Array<string>,
 	description: string,
-	exec: (commandContext.Context) -> (),
+	exec: (context: Context) -> (),
 }
 return nil
