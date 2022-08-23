@@ -1,3 +1,5 @@
+--!strict
+
 local TweenService = game:GetService("TweenService")
 return function(container, list)
 	local API = {}
@@ -8,7 +10,7 @@ return function(container, list)
 		}):Play()
 	end
 
-	function API.createText(text: string)
+	function API.createText(text: string): TextBox
 		local box = Instance.new("TextBox")
 		box.Text = text
 		box.BackgroundTransparency = 1
